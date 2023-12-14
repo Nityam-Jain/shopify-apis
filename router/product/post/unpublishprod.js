@@ -11,14 +11,14 @@ router.post('/unpublishedprod',async(req,res)=>{
         
         });
         const newproduct = {
-            title :title,
-            body_html :body_html,
-            vendor :vendor,
-            product_type :product_type,
-            published :published
+            title ,
+            body_html ,
+            vendor,
+            product_type,
+            published 
         }
-           console.log(newproduct,"NEW")
-            const unpublishedprod = await shopifyStore.product.create(newproduct)
+       
+      const unpublishedprod = await shopifyStore.product.create(newproduct)
             return res.status(200).send({status: 'Success', message: 'Products Added successfully', product: unpublishedprod });
      }catch(error) {
         console.log(error)
