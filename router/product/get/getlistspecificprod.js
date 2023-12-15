@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const shopify = require('shopify-api-node')
 router.get('/getSpecificProd',async(req,res)=>{
-    const ids = {ids}=req.body
+    const {ids}=req.body
   try{
     const shopifyStore = new shopify({
         shopName: process.env.Shopename,
