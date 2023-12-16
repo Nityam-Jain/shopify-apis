@@ -9,8 +9,8 @@ router.get('/getCurrency',async(req,res)=>{
         accessToken: process.env.Acesstoken,
         apiVersion: process.env.Apiversion 
     
-    });
-    const getcurrency = await shopifyStore.product.list({presentment_currencies:presentment_currencies})
+    });   
+    const getcurrency = await shopifyStore.product.list()
     return res.status(200).send({status: 'Success', message: 'Products Added successfully', getCurrency: getcurrency })
 
   }
@@ -18,5 +18,5 @@ router.get('/getCurrency',async(req,res)=>{
    console.error('Error fetching specific products:', error.message);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-})
+})  
 module.exports=router;

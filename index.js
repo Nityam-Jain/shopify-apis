@@ -16,6 +16,8 @@ const getAllProd = require('./router/product/get/getAllProd')
 const getProdAfterId = require('./router/product/get/getProdAfterId')
 const getProdofCollec = require('./router/product/get/getProdofCollec')
 const getCurrency = require('./router/product/get/getCurrency')
+const getSingleProduct = require('./router/product/get/getSingleProduct')
+const getDatawithSpecfield = require('./router/product/get/getDatawithSpecfield')
 require('dotenv').config();
 
 const app = express() 
@@ -39,6 +41,8 @@ app.use('/api',getAllProd)
 app.use('/api',getProdAfterId)
 app.use('/api',getProdofCollec)
 app.use('/api',getCurrency)
+app.use('/api',getSingleProduct)
+app.use('/api',getDatawithSpecfield)
 
 //PORT
 PORT = process.env.PORT

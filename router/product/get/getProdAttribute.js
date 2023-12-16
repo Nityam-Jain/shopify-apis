@@ -6,9 +6,9 @@ router.get('/getProdAttribute',async(req,res)=>{
     try{
         const shopifyStore = new shopify({
             shopName: process.env.Shopename,
-            accessToken: process.env.Acesstoken,
+            accessToken: process.env.Acesstoken, 
             apiVersion: process.env.Apiversion  
-        
+         
         });
         const product = await shopifyStore.product.list({since_id:since_id})
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const shopify = require('shopify-api-node')
-router.get('/getProdofCollec/:collection_id',async(req,res)=>{
+router.get('/getProdofCollec',async(req,res)=>{
     const{collection_id}=req.query
    try{
     const shopifyStore = new shopify({
