@@ -18,6 +18,10 @@ const getProdofCollec = require('./router/product/get/getProdofCollec')
 const getCurrency = require('./router/product/get/getCurrency')
 const getSingleProduct = require('./router/product/get/getSingleProduct')
 const getDatawithSpecfield = require('./router/product/get/getDatawithSpecfield')
+const getCountofProd = require('./router/product/get/getCountofProd')
+const getCountofProdinCollec = require('./router/product/get/getCountofProdinCollec')
+//product put(update) Apis
+const updatemetafield = require('./router/product/put/updatemetafield')
 require('dotenv').config();
 
 const app = express() 
@@ -43,7 +47,11 @@ app.use('/api',getProdofCollec)
 app.use('/api',getCurrency)
 app.use('/api',getSingleProduct)
 app.use('/api',getDatawithSpecfield)
+app.use('/api',getCountofProd)
+app.use('/api',getCountofProdinCollec)
 
+//product data update Api calling
+app.use('/api',updatemetafield)
 //PORT
 PORT = process.env.PORT
 app.listen(PORT,()=>{
